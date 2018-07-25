@@ -23,10 +23,10 @@ def initMCP(app):
 
 @cbpi.actor
 class MCP23017_TestActor(ActorBase):
-    a_busad = Property.Select("Bus Address", options=["0x20","0x21","0x22","0x23","0x24","0x25","0x26","0x27"], default_value="0x20", description="Bus address setting of MCP based on A0 A1 A2.")
+    a_busad = Property.Select("Bus Address", options=["0x20","0x21","0x22","0x23","0x24","0x25","0x26","0x27"], description="Bus address setting of MCP based on A0 A1 A2.")
     b_chan = Property.Text("Channel", configurable=True, default_value="100", description="MCP Output channel 0-128")
     #c_pud = Property.Select("Pull up", options=["Off","Up"], default_value = "Off", description="Pull Up or down resisitor")
-    f_inv = Property.Select("Invert Output", options=["No","Yes"], default_value = "No", description="Invert the output so on means output at 0V")
+    f_inv = Property.Select("Invert Output", default_value = "No", description="Invert the output so on means output at 0V")
 
     #initiasliser called when an actor is created or changed
     def init(self):
