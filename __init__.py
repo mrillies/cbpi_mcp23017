@@ -31,25 +31,25 @@ class MCP23017_TestActor(ActorBase):
     #initiasliser called when an actor is created or changed
     def init(self):
         try:
-         self.busad = self.a_busad
-         self.chan = int(self.b_chan) + 500
-         if self.f_inv == "Yes"
-            self.on_pol = 0
-            self.off_pol = 1
-         else 
-            self.on_pol = 1
-            self.off_pol = 0
+            self.busad = self.a_busad
+            self.chan = int(self.b_chan) + 500
+            if self.f_inv == "Yes":
+                self.on_pol = 0
+                self.off_pol = 1
+            else:
+                self.on_pol = 1
+                self.off_pol = 0
          
-         #self.check_mcp()
+            #self.check_mcp()
                  
-         self.is_on = False
- 
-         mcp.pinMode(chan,1)
-         mcp.digitalWrite(self.chan,self.off_pol)
+            self.is_on = False
+        
+            mcp.pinMode(chan,1)
+            mcp.digitalWrite(self.chan,self.off_pol)
          
         except Exception as e:
-         traceback.print_exc()
-         raise
+            traceback.print_exc()
+            raise
 
     def on(self, power=100):
         self.is_on = True
